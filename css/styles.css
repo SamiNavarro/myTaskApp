@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vh;
+}
+
+h1 {
+  width: 30%;
+  margin: auto;
+}
+
+form {
+  background-color: #c4c4c4;
+  width: 40%;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+fieldset {
+  width: 100%;
+  margin: auto;
+}
+
+input {
+  border: 2px transparent #3f3e3e;
+  background-color: #f2f2f2;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.btn-form {
+  float: right;
+  margin-top: 10px;
+}

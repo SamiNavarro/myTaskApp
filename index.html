@@ -8,6 +8,13 @@
     <title>My Task App</title>
 </head>
 <body>
+
+    <header>
+        <h1>My task list</h1>
+        <div class="profile-pic">
+            <img src="" alt="">
+        </div>
+    </header>
     
     <form name="mytaskapp" action="#" method="POST">
         
@@ -38,17 +45,19 @@
             <legend>Status</legend>
             <div id="radio">
                 <label for="pending">Pending</label>
-                <input type="radio" name="pending" value="pending" tabindex="50" id="pending">
+                <input type="radio" name="status" value="pending" tabindex="50" id="pending">
 
                 <label for="inprogress">In Progress</label>
-                <input type="radio" name="inprogress" value="pending" tabindex="60" id="inprogress">
+                <input type="radio" name="status" value="pending" tabindex="60" id="inprogress">
 
                 <label for="completed">Completed</label>
-                <input type="radio" name="completed" value="pending" tabindex="70" id="completed">
+                <input type="radio" name="status" value="pending" tabindex="70" id="completed">
             </div>
         </fieldset>
+        <div class="btn-form">
+            <input class="button" type="submit" value="Submit">
+        </div>
         
-        <input class="button" type="submit" value="Submit">
 
     </form>
         
