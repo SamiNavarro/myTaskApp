@@ -9,5 +9,49 @@
 </head>
 <body>
     
+    <form name="mytaskapp" action="#" method="POST">
+        
+       <fieldset>
+            <legend>Create a Task</legend>
+            <div class="row">
+                <label>Task Name:</label>
+                <input name="name" maxlength="30" tabindex="10" id="name">
+            </div>
+            
+            <div class="row">
+                <label>Description:</label>
+                <input name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description">
+            </div>
+
+           <div class="row">
+                <label>Assigned to:</label>
+                <input name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo">
+            </div>
+           
+           <div class="row">
+                <label>Due Date:</label>
+                <input name="DueDate" type="Date" id="DueDate" tabindex="40" id="DueDate">
+            </div>
+        </fieldset> 
+
+        <fieldset>
+            <legend>Status</legend>
+            <div id="radio">
+                <label for="pending">Pending</label>
+                <input type="radio" name="pending" value="pending" tabindex="50" id="pending">
+
+                <label for="inprogress">In Progress</label>
+                <input type="radio" name="inprogress" value="pending" tabindex="60" id="inprogress">
+
+                <label for="completed">Completed</label>
+                <input type="radio" name="completed" value="pending" tabindex="70" id="completed">
+            </div>
+        </fieldset>
+        
+        <input class="button" type="submit" value="Submit">
+
+    </form>
+        
+
 </body>
 </html>
