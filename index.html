@@ -15,51 +15,132 @@
             <img src="" alt="">
         </div>
     </header>
-    
-    <form name="mytaskapp" action="#" method="POST">
-        
-       <fieldset>
-            <legend>Create a Task</legend>
-            <div class="row">
-                <label>Task Name:</label>
-                <input name="name" maxlength="30" tabindex="10" id="name">
-            </div>
-            
-            <div class="row">
-                <label>Description:</label>
-                <input name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description">
-            </div>
 
-           <div class="row">
-                <label>Assigned to:</label>
-                <input name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo">
-            </div>
-           
-           <div class="row">
-                <label>Due Date:</label>
-                <input name="DueDate" type="Date" id="DueDate" tabindex="40" id="DueDate">
-            </div>
-        </fieldset> 
+    <section>
+        <div class="form-container">
+            <form name="mytaskapp" action="#" method="POST">
+                
+                <fieldset>
+                    <h2 class="form-title">Create a task</h2>
+                    <div class="row">
+                        <label>Task Name:</label>
+                        <input type="text" name="name" maxlength="30" tabindex="10" id="name" class="input">
+                    </div>
+                    
+                    <div class="row">
+                        <label>Description:</label>
+                        <textarea name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description" class="input"></textarea>
+                    </div>
 
-        <fieldset>
-            <legend>Status</legend>
-            <div id="radio">
-                <label for="pending">Pending</label>
-                <input type="radio" name="status" value="pending" tabindex="50" id="pending">
+                <div class="row-1">
+                        <label>Assigned to:</label>
+                        <input ype="text" name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo" class="input">
+                    </div>
+                
+                <div class="row">
+                        <label>Due Date:</label>
+                        <input name="DueDate" type="Date" id="DueDate" tabindex="40" id="DueDate" class="input">
+                    </div>
+                </fieldset> 
 
-                <label for="inprogress">In Progress</label>
-                <input type="radio" name="status" value="pending" tabindex="60" id="inprogress">
-
-                <label for="completed">Completed</label>
-                <input type="radio" name="status" value="pending" tabindex="70" id="completed">
-            </div>
-        </fieldset>
-        <div class="btn-form">
-            <input class="button" type="submit" value="Submit">
+                <fieldset>
+                    <div class="row-1">
+                        <label for="status">Task Status:</label>
+                        <select name="status" id="status" class="input">
+                            <option value="0">Choose your task status</option>
+                            <option value="pending">Pending</option>
+                            <option value="inProgress">In progress</option>
+                            <option value="completed">Completed</option>   
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <div class="btn">
+                        <input type="submit" value="Add Task" class="btn-form">
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        
 
-    </form>
+        <div class="task-container">
+            
+            <div class="task-body">
+                <div class="task-header">
+                    <h2 class="task-title">Create a Wireframe<span>+</span></h2>
+                </div>
+                <div class="task-dropdown">
+                    <div class="task-info">
+                        <h3>Task description:</h3>
+                        <div id="description-input">
+                            <p>Create a wireframe using Figma</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Assigned to:</h3>
+                        <div id="assigned-input">
+                            <p>Sami & Phil</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Due date:</h3>
+                        <div id="date-input">
+                            <p>30/08/2021</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Status:</h3>
+                        <div id="status-input"></div>
+                        <p>Completed</p>
+                        <div class="btn">
+                            <button class="btn-form">Delete Task</button>
+                            <button class="btn-form">Edit Task</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="task-body">
+                <div class="task-header">
+                    <h2 class="task-title">Implement Wireframe<span>+</span></h2>
+                </div>
+                <div class="task-dropdown">
+                    <div class="task-info">
+                        <h3>Task description:</h3>
+                        <div id="description-input">
+                            <p>Implement a wireframe usign HTML & CSS</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Assigned to:</h3>
+                        <div id="assigned-input">
+                            <p>Sami & Phil</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Due date:</h3>
+                        <div id="date-input">
+                            <p>30/08/2021</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Status:</h3>
+                        <div id="status-input"></div>
+                        <p>Completed</p>
+                        <div class="btn">
+                            <button class="btn-form">Delete Task</button>
+                            <button class="btn-form">Edit Task</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+                
+        </div>
+    </section>
         
 
 </body>
