@@ -9,91 +9,139 @@
 </head>
 <body>
 
-     <div id="mylists" class="">
-        
-        <div class="all-tasks">
-         <h2 class="task-list-title">My Lists</h2>
-         <ul class="task-list">
-             <li class="active-list">Sprint 1- HTML/CSS</li>
-             <li>Sprint 2- Javascript</li>
-             <li>Sprint 3- Storage API</li>
-             <li>Sprint 4- Presentation</li>
-             <li>Sprint 5- Celebration</li>
-          </ul>
 
-            <form action="">
-                <!-- <label>New Lists</label>  Sami please check if right -->
-                <!-- <input type="text" class ="new list" placeholder="new list name" <!--aria-label="new list name"--> />
+    <header>
+        <h1>My task list</h1>
+        <div class="profile-pic">
+            <img src="" alt="">
+        </div>
+    </header>
 
-                <!-- <button class="btn list" aria-label="create new list"-->>+</button>
-            </form> -->
-        <!-- </div>
-        
-        <div class="todo-list">
-            <div class="todo-header">
-                <!-- <h2 class="list-title">Example Header</h2>
-                <p class="task-count">3 tasks remaining</p> -->
-            <!-- </div>
-
-            <div class="todo-body">
-                <div class="tasks">
-                    <div class="task">
-                        <input type="checkbox" id="task-1" label for="task-1">
-
+    <section>
+        <div class="form-container">
+            <form name="mytaskapp" action="#" method="POST">
+                
+                <fieldset>
+                    <h2 class="form-title">Create a task</h2>
+                    <div class="row">
+                        <label>Task Name:</label>
+                        <input type="text" name="name" maxlength="30" tabindex="10" id="name" class="input">
                     </div>
-                </div>
-                <div class="new-task-creator"></div>
-                <div class="delete"></div>
+                    
+                    <div class="row">
+                        <label>Description:</label>
+                        <textarea name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description" class="input"></textarea>
+                    </div>
 
+                <div class="row-1">
+                        <label>Assigned to:</label>
+                        <input ype="text" name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo" class="input">
+                    </div>
+                
+                <div class="row">
+                        <label>Due Date:</label>
+                        <input name="DueDate" type="Date" id="DueDate" tabindex="40" id="DueDate" class="input">
+                    </div>
+                </fieldset> 
 
-            </div>
-        </div> -->
-<!--    
-    </div> --> --> -->
-     -->
-    <form name="mytaskapp" action="#" method="POST">
-    
-        
-       <fieldset>
-            <legend>Create a Task</legend>
-            <div class="row">
-                <label>Task Name:</label>
-                <input name="name" maxlength="30" tabindex="10" id="name">
-            </div>
+                <fieldset>
+                    <div class="row-1">
+                        <label for="status">Task Status:</label>
+                        <select name="status" id="status" class="input">
+                            <option value="0">Choose your task status</option>
+                            <option value="pending">Pending</option>
+                            <option value="inProgress">In progress</option>
+                            <option value="completed">Completed</option>   
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <div class="btn">
+                        <input type="submit" value="Add Task" class="btn-form">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="task-container">
             
-            <div class="row">
-                <label>Description:</label>
-                <input name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description">
+            <div class="task-body">
+                <div class="task-header">
+                    <h2 class="task-title">Create a Wireframe<span>+</span></h2>
+                </div>
+                <div class="task-dropdown">
+                    <div class="task-info">
+                        <h3>Task description:</h3>
+                        <div id="description-input">
+                            <p>Create a wireframe using Figma</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Assigned to:</h3>
+                        <div id="assigned-input">
+                            <p>Sami & Phil</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Due date:</h3>
+                        <div id="date-input">
+                            <p>30/08/2021</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Status:</h3>
+                        <div id="status-input"></div>
+                        <p>Completed</p>
+                        <div class="btn">
+                            <button class="btn-form">Delete Task</button>
+                            <button class="btn-form">Edit Task</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
             </div>
 
-           <div class="row">
-                <label>Assigned to:</label>
-                <input name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo">
+            <div class="task-body">
+                <div class="task-header">
+                    <h2 class="task-title">Implement Wireframe<span>+</span></h2>
+                </div>
+                <div class="task-dropdown">
+                    <div class="task-info">
+                        <h3>Task description:</h3>
+                        <div id="description-input">
+                            <p>Implement a wireframe usign HTML & CSS</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Assigned to:</h3>
+                        <div id="assigned-input">
+                            <p>Sami & Phil</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Due date:</h3>
+                        <div id="date-input">
+                            <p>30/08/2021</p>
+                        </div>
+                    </div>
+                    <div class="task-info">
+                        <h3>Status:</h3>
+                        <div id="status-input"></div>
+                        <p>Completed</p>
+                        <div class="btn">
+                            <button class="btn-form">Delete Task</button>
+                            <button class="btn-form">Edit Task</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
             </div>
-           
-           <div class="row">
-                <label>Due Date:</label>
-                <input name="DueDate" type="Date" id="DueDate" tabindex="40" id="DueDate">
-            </div>
-        </fieldset> 
-
-        <fieldset>
-            <legend>Status</legend>
-            <div id="radio">
-                <label for="pending">Pending</label>
-                <input type="radio" name="pending" value="pending" tabindex="50" id="pending">
-
-                <label for="inprogress">In Progress</label>
-                <input type="radio" name="inprogress" value="pending" tabindex="60" id="inprogress">
-
-                <label for="completed">Completed</label>
-                <input type="radio" name="completed" value="pending" tabindex="70" id="completed">
-            </div>
-        </fieldset>
-        
-        <input class="button" type="submit" value="Submit">
-
-    </form>
+                
+        </div>
+    </section>
         
 
 </body>
