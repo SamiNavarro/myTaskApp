@@ -36,6 +36,11 @@ fieldset {
   margin-top: 0;
 }
 
+footer {
+  padding-top: 4rem;
+  text-align: center;
+}
+
 .row {
   margin-top: 0;
 }
@@ -109,6 +114,41 @@ label {
 
 .row-1 {
   margin-top: -7px;
+}
+
+/* list-container section */
+
+.list-container {
+  width: 20%;
+  background-color: #9bccdd;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+ .list-title {
+  /* width: 100%;
+  margin: auto; */
+  text-align: center;
+} 
+
+.list-body {
+  position: relative;
+  display: block;
+  /* background-color: #f2f2f284; */
+  border-radius: 22px;
+  margin-bottom: 15px;
+}
+
+.list-header {
+  background-color: lightcoral;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.list-title {
+  padding-left: 1.7rem;
 }
 
 /* task container section */
