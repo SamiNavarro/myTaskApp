@@ -7,9 +7,164 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 16px;
+  font-family: "Cairo", sans-serif;
+  --transition-speed: 600ms;
+}
+
 body {
   width: 100%;
-  font-family: "Cairo", sans-serif;
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+/* Nav bar section */
+
+.navbar {
+  position: fixed;
+  background-color: #9bccdd;
+  transition: width 200ms ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 20px 1px rgba(119, 59, 59, 0.1);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: white;
+  text-decoration: none;
+  filter: grayscale(60%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: #608491;
+  color: rgb(51, 73, 73);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.fa-primary {
+  color: rgb(237, 171, 136);
+}
+
+.fa-secondary {
+  color: #f9faf9;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Nav bar small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    z-index: 500;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .nav-link:hover {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Nav bar large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    z-index: 500;
+  }
+  .navbar:hover {
+    width: 16rem;
+  }
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
 }
 
 h1 {
@@ -43,6 +198,10 @@ fieldset {
 .btn {
   width: 100%;
 }
+.btn-task {
+  margin-top: 10px;
+}
+
 .btn-form {
   float: right;
   margin-top: 10px;
@@ -151,10 +310,11 @@ label {
 .task-info p {
   padding-left: 1.2rem;
   font-size: 0.9rem;
+  width: 100%;
 }
 
 .task-header {
-  background-color: lightcoral;
+  background-color: rgb(237, 171, 136, 0.6);
   border-radius: 22px;
   cursor: pointer;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
@@ -165,13 +325,28 @@ label {
   background-color: #f2f2f2;
   width: inherit;
   border-radius: 22px;
-  margin-bottom: 15px;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
+.task-header:hover {
+  background-color: rgb(237, 171, 136);
+}
+
 .task-body:hover .task-dropdown {
   display: block;
+}
+
+.status {
+  display: flex;
+}
+
+.delete-btn {
+  margin-right: 15px;
+}
+
+.edit-btn {
+  margin-right: 8px;
 }
 
 /* Media Query section */
@@ -195,8 +370,15 @@ label {
   .task-title span {
     display: inline-block;
   }
-}
 
+  .add-task {
+    margin-bottom: 20px;
+  }
+
+  .status {
+    display: flex;
+  }
+}
 
 @media only screen and (min-width: 320px) and (max-width: 475px) {
   .form-container {
@@ -210,6 +392,19 @@ label {
   .task-title span {
     display: none;
   }
+
+  .status {
+    display: flex;
+  }
+
+  .status-btn {
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  .options-btn {
+    padding-left: 85px;
+  }
 }
 
 @media only screen and (min-width: 825px) and (max-width: 905px) {
@@ -219,14 +414,13 @@ label {
 }
 
 @media only screen and (min-width: 1700px) and (max-width: 2300px) {
-    .form-container {
-        width: 20%;
-        margin: auto;
-        
-      }
-    
-      .task-container {
-        width: 30%;
-        margin: auto;
-      }
-    }
+  .form-container {
+    width: 20%;
+    margin: auto;
+  }
+
+  .task-container {
+    width: 30%;
+    margin: auto;
+  }
+}
