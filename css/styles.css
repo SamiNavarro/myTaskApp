@@ -173,7 +173,7 @@ h1 {
 
 section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-around;
 }
 
 form {
@@ -189,6 +189,11 @@ fieldset {
   border: none;
   padding: 0.4rem;
   margin-top: 0;
+}
+
+footer {
+  padding-top: 4rem;
+  text-align: center;
 }
 
 .row {
@@ -225,6 +230,7 @@ fieldset {
   background-color: #9bccdd;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
+  margin-right: 30px;;
 }
 
 .form-title {
@@ -270,10 +276,47 @@ label {
   margin-top: -7px;
 }
 
+/* list-container section */
+
+.list-container {
+  width: 30%;
+  background-color: #9bccdd;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: auto;
+  
+}
+
+ .list-title {
+  /* width: 100%;
+  margin: auto; */
+  text-align: center;
+} 
+
+.list-body {
+  position: relative;
+  display: block;
+  /* background-color: #f2f2f284; */
+  border-radius: 22px;
+  margin-bottom: 15px;
+}
+
+.list-header {
+  background-color: lightcoral;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.list-title {
+  padding-left: 1.7rem;
+}
+
 /* task container section */
 
 .task-container {
-  width: 40%;
+  width: 30%;
   background-color: #9bccdd;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
@@ -363,6 +406,12 @@ label {
     margin: auto;
   }
 
+  .list-container {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+
   section {
     display: block;
   }
@@ -383,6 +432,11 @@ label {
 @media only screen and (min-width: 320px) and (max-width: 475px) {
   .form-container {
     width: 80%;
+  }
+
+  .list-container {
+    width:80%;
+    margin-bottom: 5%;
   }
 
   .task-header h2 {

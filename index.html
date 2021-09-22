@@ -12,6 +12,7 @@
 <body>
 
 
+
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
@@ -63,6 +64,7 @@
 
     </nav>
 
+
     <main>
         <header>
             <h1>My task list</h1>
@@ -71,53 +73,52 @@
             </div>
         </header>
         <section>
-            <div class="form-container">
-                <form name="mytaskapp" action="#" method="POST">
-                    
-                    <fieldset>
-                        <h2 class="form-title">Create a task</h2>
-                        <div class="row">
-                            <label>Task Name:</label>
-                            <input 
-                            type="text" 
-                            name="name" 
-                            maxlength="30" 
-                            tabindex="10" 
-                            id="name" 
-                            class="input">
-                        </div>
-                        
-                        <div class="row">
-                            <label>Description:</label>
-                            <textarea 
-                                name="description" 
-                                rows="5" 
-                                col="20" 
-                                maxlength="100" 
-                                tabindex="20" 
-                                id="description" 
-                                class="input">
-                            </textarea>
-                        </div>
-    
-                    <div class="row-1">
-                            <label>Assigned to:</label>
-                            <input ype="text" name="AssignedTo" maxlength="30" tabindex="30" id="assignedTo" class="input">
-                        </div>
+        <div class="list-container">
+            <h2 class="list-title">My List</h2>
+            <div class="list-body">
+                <div class="list-header">
+                <h2 class="list-title">Sprint 1</h2>
+                </div>
+                <div class="list-header">
+                <h2 class="list-title">Sprint 2</h2>
+                </div>
+                <div class="list-header">
+                <h2 class="list-title">Sprint 3</h2>
+                </div>
+                <div class="btn">
+                <input type="submit" value="Add List" class="btn-form">
+                </div>
+                
+            </div>
+        </div>
+        <div class="form-container">
+            <form name="mytaskapp" action="#" method="POST">
+                
+                <fieldset>
+                    <h2 class="form-title">Create a task</h2>
+                    <div class="row">
+                        <label for="task-name">Task Name:</label>
+                        <input type="text" name="task-name" maxlength="30" tabindex="10" id="task-name" class="input" minlength="3" maxlength="20" required>
+                    </div>
                     
                     <div class="row">
-                            <label>Due Date:</label>
-                            <input 
-                                name="DueDate" 
-                                type="Date" 
-                                id="DueDate" 
-                                tabindex="40" 
-                                id="DueDate" 
-                                class="input">
-                        </div>
-                    </fieldset> 
-    
-                    <fieldset>
+                        <label for="description">Description:</label>
+                        <textarea name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description" class="input" minlength="5" maxlength="150" required></textarea>
+                    </div>
+
+                <div class="row">
+                        <label for="assignedTo">Assigned to:</label>
+                        <input type="text" name="assignedTo" maxlength="30" tabindex="30" id="assignedTo" class="input" minlength="3" maxlength="20" required>
+                    </div>
+                
+                <div class="row">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="Date" name="dueDate" tabindex="40" id="dueDate" class="input" required>
+                    </div>
+                </fieldset> 
+              
+       
+                 <fieldset>
                         <div class="row-1">
                             <label for="status">Task Status:</label>
                             <select name="status" id="status" class="input">
@@ -132,23 +133,27 @@
                     <fieldset>
                         <div class="btn btn-task">
                             <input type="submit" value="Add" class="btn-form">
-                        </div>
+                            <input type="reset" value="Clear" class="btn-form">
+                         </div>
                     </fieldset>
                 </form>
             </div>
     
-            <div class="task-container">
-                
-                <div class="task-body">
-                    <div class="task-header">
-                        <h2 class="task-title">Create a Wireframe<span>+</span></h2>
-                    </div>
-                    <div class="task-dropdown">
-                        <div class="task-info">
-                            <h3>Task description:</h3>
-                            <div id="description-input">
-                                <p>Create a wireframe using Figma</p>
-                            </div>
+
+           
+        
+        <div class="task-container">
+            
+            <div class="task-body">
+                <div class="task-header">
+                    <h2 class="task-title">Create a Wireframe<span>+</span></h2>
+                </div>
+                <div class="task-dropdown">
+                    <div class="task-info">
+                        <h3>Task description:</h3>
+                        <div id="description-input">
+                            <p>Create a wireframe using Figma</p>
+
                         </div>
                         <div class="task-info">
                             <h3>Assigned to:</h3>
@@ -341,8 +346,15 @@
                 </fieldset>
                 
             </div>
+
         </section>
     </main>
-    
+   <footer>
+     <div class="foot">
+        <p>© 2021 Sami & Phil All rights reserved.</p>
+      </div>
+    </footer>
+          
 </body>
+
 </html>
