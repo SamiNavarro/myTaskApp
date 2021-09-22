@@ -26,6 +26,12 @@ main {
   padding: 1rem;
 }
 
+
+section {
+  display: flex;
+  justify-content:space-evenly;
+}
+
 /* Nav bar section */
 
 .navbar {
@@ -171,10 +177,6 @@ h1 {
   text-align: center;
 }
 
-section {
-  display: flex;
-  justify-content:space-around;
-}
 
 form {
   width: 90%;
@@ -279,13 +281,12 @@ label {
 /* list-container section */
 
 .list-container {
-  width: 30%;
+  width: 20%;
   background-color: #9bccdd;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
   padding: 30px;
-  margin: auto;
-  
+    
 }
 
  .list-title {
@@ -316,7 +317,7 @@ label {
 /* task container section */
 
 .task-container {
-  width: 30%;
+  width: 40%;
   background-color: #9bccdd;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
