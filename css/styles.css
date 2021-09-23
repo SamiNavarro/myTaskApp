@@ -26,10 +26,9 @@ main {
   padding: 1rem;
 }
 
-
 section {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
 
 /* Nav bar section */
@@ -177,7 +176,6 @@ h1 {
   text-align: center;
 }
 
-
 form {
   width: 90%;
   margin: auto;
@@ -232,7 +230,6 @@ footer {
   background-color: #9bccdd;
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
-  margin-right: 30px;;
 }
 
 .form-title {
@@ -250,6 +247,21 @@ footer {
   padding: 0.5rem 1rem;
   letter-spacing: 0.5px;
   border-radius: 25px;
+}
+.validated-field {
+  border: 2px solid rgb(119, 221, 119);
+}
+
+.not-validated-field {
+  border: 2px solid rgb(221, 139, 119);
+}
+
+.validated-feedback {
+  color: rgb(102, 169, 102);
+}
+
+.not-validated-feedback {
+  color: rgb(221, 139, 119);
 }
 
 textarea {
@@ -286,14 +298,14 @@ label {
   border-radius: 10px;
   box-shadow: 0 0 20px 1px rgb(0, 0, 0, 0.1);
   padding: 30px;
-    
 }
 
- .list-title {
+.list-title {
   /* width: 100%;
   margin: auto; */
-  text-align: center;
-} 
+  font-size: 1rem;
+  align-items: center;
+}
 
 .list-body {
   position: relative;
@@ -304,7 +316,7 @@ label {
 }
 
 .list-header {
-  background-color: lightcoral;
+  background-color: rgb(237, 171, 136);
   border-radius: 22px;
   cursor: pointer;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
@@ -436,7 +448,7 @@ label {
   }
 
   .list-container {
-    width:80%;
+    width: 80%;
     margin-bottom: 5%;
   }
 

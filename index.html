@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <title>My Task App</title>
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
-        </script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="/js/taskManager.js"></script>
+    <script defer src="/js/index.js"></script>
+   
 </head>
 <body>
 
@@ -85,35 +87,67 @@
                 <div class="list-header">
                 <h2 class="list-title">Sprint 3</h2>
                 </div>
-                <div class="btn">
-                <input type="submit" value="Add List" class="btn-form">
-                </div>
+                <fieldset>
+                    <div class="btn">
+                        <input type="submit" value="Add List" class="btn-form">
+                        </div>
+                </fieldset>
+                
                 
             </div>
         </div>
         <div class="form-container">
-            <form name="mytaskapp" action="#" method="POST">
+            <form name="mytaskapp" id="taskForm">
                 
                 <fieldset>
                     <h2 class="form-title">Create a task</h2>
                     <div class="row">
                         <label for="task-name">Task Name:</label>
-                        <input type="text" name="task-name" maxlength="30" tabindex="10" id="task-name" class="input" minlength="3" maxlength="20" required>
+                        <input 
+                            type="text" 
+                            name="task-name"  
+                            tabindex="10" 
+                            id="task-name" 
+                            class="input" 
+                            maxlength="20" 
+                            ><span id="nameFeedback"></span>
                     </div>
                     
                     <div class="row">
                         <label for="description">Description:</label>
-                        <textarea name="description" rows="5" col="20" maxlength="100" tabindex="20" id="description" class="input" minlength="5" maxlength="150" required></textarea>
+                        <textarea 
+                            name="description" 
+                            rows="5" 
+                            col="20" 
+                            maxlength="100" 
+                            tabindex="20" 
+                            id="description" 
+                            class="input" 
+                            ></textarea><span id="desFeedback"></span>
+                            
                     </div>
 
                 <div class="row">
-                        <label for="assignedTo">Assigned to:</label>
-                        <input type="text" name="assignedTo" maxlength="30" tabindex="30" id="assignedTo" class="input" minlength="3" maxlength="20" required>
+                        <label for="assigned-to">Assigned to:</label>
+                        <input 
+                            type="text" 
+                            name="assignedTo" 
+                            tabindex="30" 
+                            id="assigned-to" 
+                            class="input"  
+                            maxlength="20" 
+                            ><span id="assignedFeedback"></span>
                     </div>
                 
                 <div class="row">
-                        <label for="dueDate">Due Date:</label>
-                        <input type="Date" name="dueDate" tabindex="40" id="dueDate" class="input" required>
+                        <label for="due-date">Due Date:</label>
+                        <input 
+                            type="Date" 
+                            name="dueDate" 
+                            tabindex="40" 
+                            id="due-date" 
+                            class="input" 
+                            ><span id="dateFeedback"></span>
                     </div>
                 </fieldset> 
               
@@ -121,12 +155,15 @@
                  <fieldset>
                         <div class="row-1">
                             <label for="status">Task Status:</label>
-                            <select name="status" id="status" class="input">
+                            <select name="status" id="taskStatus" class="input">
                                 <option value="0">Choose your task status</option>
                                 <option value="pending">Pending</option>
                                 <option value="inProgress">In progress</option>
                                 <option value="completed">Completed</option>   
                             </select>
+                            <span id="statusFeedback"></span>
+                            
+                            
                         </div>
                     </fieldset>
                     
@@ -144,16 +181,16 @@
         
         <div class="task-container">
             
-            <div class="task-body">
-                <div class="task-header">
-                    <h2 class="task-title">Create a Wireframe<span>+</span></h2>
-                </div>
-                <div class="task-dropdown">
-                    <div class="task-info">
-                        <h3>Task description:</h3>
-                        <div id="description-input">
-                            <p>Create a wireframe using Figma</p>
-
+                <div class="task-body">
+                    <div class="task-header">
+                        <h2 class="task-title">Create a Wireframe<span>+</span></h2>
+                    </div>
+                    <div class="task-dropdown">
+                        <div class="task-info">
+                            <h3>Task description:</h3>
+                            <div id="description-input">
+                                <p>Create a wireframe using Figma</p>
+                            </div>
                         </div>
                         <div class="task-info">
                             <h3>Assigned to:</h3>
@@ -354,7 +391,7 @@
         <p>© 2021 Sami & Phil All rights reserved.</p>
       </div>
     </footer>
-          
+    
 </body>
 
 </html>
