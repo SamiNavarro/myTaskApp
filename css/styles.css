@@ -304,7 +304,7 @@ label {
   /* width: 100%;
   margin: auto; */
   font-size: 1rem;
-  /* text-align: center; */
+  align-items: center;
 }
 
 .list-body {
@@ -316,7 +316,7 @@ label {
 }
 
 .list-header {
-  background-color: lightcoral;
+  background-color: rgb(237, 171, 136);
   border-radius: 22px;
   cursor: pointer;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);

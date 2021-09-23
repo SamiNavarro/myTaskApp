@@ -17,7 +17,7 @@ taskForm.addEventListener("submit", validate);
 function validate(event) {
   event.preventDefault();
 
-  if (taskName.value.trim().length > 5) {
+  if (taskName.value.trim().length >= 5) {
     nameFeedback.innerHTML = "Looks good!";
     nameFeedback.classList.add("validated-feedback");
     nameFeedback.classList.remove("not-validated-feedback");
@@ -69,11 +69,11 @@ function validate(event) {
     dateFeedback.innerHTML = "Please add a date!";
     dateFeedback.classList.add("not-validated-feedback");
     dateFeedback.classList.remove("validated-feedback");
-    dueDate.classList.add("not-validated-feedback");
-    dueDate.classList.remove("validated-feedback");
+    dueDate.classList.add("not-validated-field");
+    dueDate.classList.remove("validated-field");
   }
 
-  if (taskStatus.value) {
+  if (taskStatus.value != 0) {
     statusFeedback.innerHTML = "Looks good!";
     statusFeedback.classList.add("validated-feedback");
     statusFeedback.classList.remove("not-validated-feedback");
