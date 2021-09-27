@@ -252,7 +252,7 @@ footer {
   border: 2px solid rgb(119, 221, 119);
 }
 
-.not-validated-field {
+.non-validated-field {
   border: 2px solid rgb(221, 139, 119);
 }
 
@@ -260,8 +260,16 @@ footer {
   color: rgb(102, 169, 102);
 }
 
-.not-validated-feedback {
+.non-validated-feedback {
   color: rgb(221, 139, 119);
+}
+
+span {
+  display: none;
+}
+
+.error {
+  display: inline-block;
 }
 
 textarea {
@@ -377,7 +385,7 @@ label {
 }
 
 .task-dropdown {
-  display: none;
+  /* display: none; */
   background-color: #f2f2f2;
   width: inherit;
   border-radius: 22px;
@@ -385,13 +393,13 @@ label {
   z-index: 1;
 }
 
-.task-header:hover {
+/* .task-header:hover {
   background-color: rgb(237, 171, 136);
-}
+} */
 
-.task-body:hover .task-dropdown {
+/* .task-body:hover .task-dropdown {
   display: block;
-}
+} */
 
 .status {
   display: flex;
