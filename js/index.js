@@ -51,7 +51,7 @@ const validateStatus = (statusInput, errorMsg) => {
 };
 
 taskForm.addEventListener("submit", validate);
-taskForm.addEventListener("clear", clearForm);
+// taskForm.addEventListener("clear", clearForm);
 
 function validate(event) {
   event.preventDefault();
@@ -91,6 +91,7 @@ function validate(event) {
       taskStatus.value
     );
     clearForm();
+    taskManager.render();
   }
 
   console.log(taskManager.tasks);
