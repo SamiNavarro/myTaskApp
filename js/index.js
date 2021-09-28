@@ -1,17 +1,19 @@
 const taskManager = new TaskManager();
 
+const taskForm = document.querySelector("#taskForm");
+
 //Selecting Id to validate input on the form
 const taskName = document.querySelector("#task-name");
 const description = document.querySelector("#description");
 const assignedTo = document.querySelector("#assigned-to");
 const dueDate = document.querySelector("#due-date");
 const taskStatus = document.querySelector("#taskStatus");
-const taskForm = document.querySelector("#taskForm");
 const nameFeedback = document.querySelector("#nameFeedback");
 const desFeedback = document.querySelector("#desFeedback");
 const dateFeedback = document.querySelector("#dateFeedback");
 const statusFeedback = document.querySelector("#statusFeedback");
 const assignedFeedback = document.querySelector("#assignedFeedback");
+
 let validationFail = 0;
 
 //Check if the Task Name input value is more than 5 characters.
@@ -50,8 +52,32 @@ const validateStatus = (statusInput, errorMsg) => {
   }
 };
 
+function clearAll() {
+  taskName.value = "";
+  description.value = "";
+  assignedTo.value = "";
+  dueDate.value = "";
+  taskStatus.value = "0";
+  taskName.classList.remove("validated-field");
+  description.classList.remove("validated-field");
+  assignedTo.classList.remove("validated-field");
+  dueDate.classList.remove("validated-field");
+  taskStatus.classList.remove("validated-field");
+
+  taskName.classList.remove("non-validated-field");
+  nameFeedback.classList.remove("error");
+  description.classList.remove("non-validated-field");
+  desFeedback.classList.remove("error");
+  assignedTo.classList.remove("non-validated-field");
+  assignedFeedback.classList.remove("error");
+  dueDate.classList.remove("non-validated-field");
+  dateFeedback.classList.remove("error");
+  taskStatus.classList.remove("non-validated-field");
+  statusFeedback.classList.remove("error");
+}
+
+taskForm.addEventListener("reset", clearAll);
 taskForm.addEventListener("submit", validate);
-// taskForm.addEventListener("clear", clearForm);
 
 function validate(event) {
   event.preventDefault();
@@ -61,26 +87,9 @@ function validate(event) {
   validateInputs(dueDate, dateFeedback, 5);
   validateStatus(taskStatus, statusFeedback);
 
-  const clearForm = () => {
-    taskName.value = "";
-    description.value = "";
-    assignedTo.value = "";
-    dueDate.value = "";
-    taskStatus.value = "0";
-    taskName.classList.remove("validated-field");
-    taskName.classList.remove("validated-feedback");
-    description.classList.remove("validated-field");
-    description.classList.remove("validated-feedback");
-    assignedTo.classList.remove("validated-field");
-    assignedTo.classList.remove("validated-feedback");
-    dueDate.classList.remove("validated-field");
-    dueDate.classList.remove("validated-feedback");
-    taskStatus.classList.remove("validated-field");
-    taskStatus.classList.remove("validated-feedback");
-  };
-
   if (validationFail > 0) {
     validationFail = 0;
+
     return;
   } else {
     taskManager.addTask(
@@ -90,9 +99,42 @@ function validate(event) {
       dueDate.value,
       taskStatus.value
     );
-    clearForm();
+    clearAll();
     taskManager.render();
   }
 
   console.log(taskManager.tasks);
 }
+
+const tasksList = document.querySelector("#taskBody");
+
+tasksList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("done-button")) {
+    // console.log(event.target.parentElement.parentElement.parentElement);
+    // return;
+    let parentTask;
+    if (event.target.classList.contains("fa-check-circle")) {
+      parentTask =
+        event.target.parentElement.parentElement.parentElement.parentElement;
+    } else {
+      parentTask = event.target.parentElement.parentElement.parentElement;
+    }
+
+    const taskId = Number(parentTask.dataset.taskId);
+    const task = taskManager.getTaskById(taskId);
+    task.taskStatus = "Done";
+
+    taskManager.render();
+  }
+  // console.log(event.target);
+  if (event.target.classList.contains("task-title")) {
+    // console.log("It runs");
+    let dropdownActive = event.target.parentElement.parentElement.children[1];
+    // console.log(dropdownActive);
+    if (dropdownActive.classList.contains("active")) {
+      dropdownActive.classList.remove("active");
+    } else {
+      dropdownActive.classList.add("active");
+    }
+  }
+});
