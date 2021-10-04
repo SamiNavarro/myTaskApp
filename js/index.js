@@ -1,5 +1,10 @@
 const taskManager = new TaskManager();
 
+// Load the tasks from localStorage     /******** new for task 9 ********/
+taskManager.load();
+// Render the loaded tasks to the page      /******** new for task 9 ********/
+taskManager.render();
+
 const taskForm = document.querySelector("#taskForm");
 
 //Selecting Id to validate input on the form
@@ -100,6 +105,7 @@ function validate(event) {
       taskStatus.value
     );
     clearAll();
+    taskManager.save();          /******** new for task 9 ********/
     taskManager.render();
   }
 
@@ -124,8 +130,35 @@ tasksList.addEventListener("click", (event) => {
     const task = taskManager.getTaskById(taskId);
     task.taskStatus = "Done";
 
+    taskManager.save();
+
     taskManager.render();
   }
+
+  // Check if a "Delete" button was clicked
+  if (event.target.classList.contains("delete-button")) {
+    // Get the parent Task
+    let parentTask;
+    if (event.target.classList.contains("fa-trash-alt")) {
+      parentTask =
+        event.target.parentElement.parentElement.parentElement.parentElement;
+    } else {
+        parentTask = event.target.parentElement.parentElement.parentElement;
+    }
+
+    // Get the taskId of the parent Task.
+    const taskId = Number(parentTask.dataset.taskId);
+
+    // Delete the task
+    taskManager.deleteTask(taskId);
+
+    // Save the tasks to localStorage
+    taskManager.save();
+
+    // Render the tasks
+    taskManager.render();
+  }
+
   // console.log(event.target);
   if (event.target.classList.contains("task-title")) {
     // console.log("It runs");
