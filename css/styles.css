@@ -460,6 +460,15 @@ label {
   transform: scale(0.95);
 }
 
+.delete-button:hover {
+  background-color: transparent;
+  color: var(--color-error);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
 .options-btn {
   padding-right: 20px;
 }
