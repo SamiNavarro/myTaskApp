@@ -105,38 +105,6 @@ const completed = document.getElementsByClassName("Completed");
 
 let validationFail = 0;
 
-//Check if the Task Name input value is more than 5 characters.
-
-function validate(event) {
-  event.preventDefault();
-  validateInputs(taskName, nameFeedback, 5);
-  validateInputs(description, desFeedback, 5);
-  validateInputs(assignedTo, assignedFeedback, 2);
-  validateInputs(dueDate, dateFeedback, 5);
-  validateStatus(taskStatus, statusFeedback);
-
-  if (validationFail > 0) {
-    validationFail = 0;
-
-    return;
-  } else {
-    taskManager.addTask(
-      taskName.value,
-      description.value,
-      assignedTo.value,
-      dueDate.value,
-      taskStatus.value,
-      listId.value
-    );
-    clearAll();
-    taskManager.render(activeList);
-    taskManager.colorPattern();
-    taskManager.save(); /******** new for task 9 ********/
-  }
-
-  // console.log(taskManager.tasks);
-}
-
 const validateInputs = (formInput, errorMsg, charCount) => {
   if (formInput.value.trim().length >= charCount) {
     formInput.classList.add("validated-field");
@@ -215,6 +183,38 @@ console.log(minDate);
 
 taskForm.addEventListener("reset", clearAll);
 taskForm.addEventListener("submit", validate);
+
+//Check if the Task Name input value is more than 5 characters.
+
+function validate(event) {
+  event.preventDefault();
+  validateInputs(taskName, nameFeedback, 5);
+  validateInputs(description, desFeedback, 5);
+  validateInputs(assignedTo, assignedFeedback, 2);
+  validateInputs(dueDate, dateFeedback, 5);
+  validateStatus(taskStatus, statusFeedback);
+
+  if (validationFail > 0) {
+    validationFail = 0;
+
+    return;
+  } else {
+    taskManager.addTask(
+      taskName.value,
+      description.value,
+      assignedTo.value,
+      dueDate.value,
+      taskStatus.value,
+      listId.value
+    );
+    clearAll();
+    taskManager.render(activeList);
+    taskManager.colorPattern();
+    taskManager.save(); /******** new for task 9 ********/
+  }
+
+  // console.log(taskManager.tasks);
+}
 
 const tasksList = document.querySelector("#taskBody");
 

@@ -1,14 +1,6 @@
 // TASK 7 we'll create a function using template literals to return the HTML for each individual task.
 // Create a new function called createTaskHtml accepting the following parameters (name, description, assignedTo, dueDate, status)
-// const changeStatus = () => {
-//   const change = document.getElementById("taskStatus").value;
-//   // const taskId = Number(parentTask.dataset.taskId);
-//   // const task = taskManager.getTaskById(taskId);
-//   // task.taskStatus = "Completed";
-//   console.log(change);
-// };
 
-// query select the
 const createTaskHtml = (
   id,
   taskName,
@@ -56,15 +48,6 @@ const createTaskHtml = (
       </div>`;
   return html;
 };
-
-{
-  /* <select onchange="changeStatus()" name="status" id="taskStatus"   class="form__input">
-<option value="${taskStatus}">${taskStatus}</option>
-<option value="Pending">Pending</option>
-<option value="In Progress">In Progress</option>
-<option value="Completed">Completed</option>   
-</select> */
-}
 
 // Create a TaskManager Class on  line 2 is a constructor with a parameter currentID set to 0 by default.
 class TaskManager {
